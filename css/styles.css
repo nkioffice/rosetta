@@ -1,0 +1,249 @@
+:root {
+    --red:rgb(191, 76, 76);
+    --text-color: #1f2937;
+    --btn-color1:#393d66;
+    --btn-color2:#ffffff;
+    --link-color: #425775;
+}
+
+body {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--text-color);
+}
+
+.notice {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    color: rgb(191, 76, 76);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+#close-notice {
+    padding: 8px;
+    color: #1f2937;
+}
+
+#count-down {
+
+    padding: 0 10px;
+}
+
+.nav-header {
+    background-color: rgb(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.nav-header a {
+    color: white;
+
+}
+
+.nav-btn {
+    color: white;
+}
+
+.h-logo-ct {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.h-logo {
+    height: 30px;
+    object-fit: contain;
+    object-position: center;
+}
+
+.logo-ct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.h-logo-icon {
+    height: 15px;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* ルート要素を相対配置にして動画を敷き詰める */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    /* 好みで調整 */
+    overflow: hidden;
+}
+
+/* 動画自体を背景のように振る舞わせる */
+.hero_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 余白なくトリミング */
+    z-index: -2;
+    /* 下層に配置 */
+}
+
+/* オーバーレイ（暗めの黒を半透明で） */
+.hero_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* コンテンツを中央に */
+.hero_content {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding: 70px 0;
+    pointer-events: visible;
+    color: white;
+}
+
+.hero_content h2 {
+    margin-top: auto;
+}
+
+.hero_content .cta-btn {
+    margin-top: auto;
+    justify-self: end;
+    color: white;
+    display: block;
+    padding: 15px 30px;
+    border-radius: 2px;
+    font-size: small;
+    border: solid #fff 1px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.179);
+}
+
+/**/
+.sect{
+    padding: 10px;
+}
+.title-ct {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.title-ct .icon {
+    height: 15px;
+
+}
+.items-ct{
+    overflow: auto;
+    padding: 10px ;
+    
+}
+.items{
+    display: flex;
+    gap: 10px;
+    
+}
+.item-card{
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    width: 40%;
+    border: solid #f3f3f3 1px;
+    border-radius: 0px;
+    line-height: 1rem;
+    flex-shrink: 0;
+    background-color: #fff;
+}
+.item-ct {
+    padding: 10px;
+}
+.item-comment{
+    font-size: x-small;
+    color: #777;
+}
+.item-info{
+    padding: 0 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 4px 0;
+}
+.item-name-1{
+    font-size: small;
+    font-weight: normal;
+    
+}
+.item-price-1{
+    font-size: small;
+    line-height: 1em; 
+}
+.item-price-dis{
+    line-height: 1em;
+    color: red;
+    font-size: small;
+}
+.strike{
+    text-decoration: line-through;
+}
+.sp-label{
+    /*font-family: "GFS Didot", serif;*/
+    color: white;
+    background-color:var(--red);
+    font-size: x-small;
+    padding: 2px 4px;
+    align-self: flex-start;
+}
+.item-img-1 {
+    width: 100%;
+}
+.item-btns{
+    font-size: small;    
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 2px 0;
+
+}
+.item-btns button{
+    padding: 10px 2px;
+    border: solid 1px rgb(213, 213, 213);
+    
+}
+
+.purchase-now{
+    background-color: var(--red);
+    color: white;
+}
