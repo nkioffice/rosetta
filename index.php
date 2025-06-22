@@ -136,7 +136,37 @@ $seconds = $remainingSeconds % 60;
             </div>
 
         </section>
+        <section id="story" class="sect">
+            <div class="title-ct">
+                <img src="./res/img/logo.png" alt="" class="icon">
+                <h3>STORY</h3>
+                <h2 style="font-size: x-small;">ブランドストーリー</h2>
+            </div>
 
+            <div style="position: relative;height:100vw;overflow: hidden;">
+                <video class="story-video"
+                    autoplay muted loop playsinline preload="auto"
+                    poster="./res/img/placeholder.jpg">
+                    <source src="./res/mov/story.mp4" type="video/mp4">
+                </video>
+                <div class="overlay">
+                    <a href="./story.php">ブランドストーリーを詳しく学ぶ</a>
+                </div>
+
+            </div>
+            <div class="desc-ct">
+                <h4 style="text-align: center;padding: 20px;">ROSETTA-職人の魂が宿るスキンジュエリー</h4>
+                <p class="desc">
+                    ヴェネツィア発のブランドROSETTAからTOKYOを拠点としたニューライン発足。
+                    ROSETTAのスキンジュエリーは、理論上10万年以上の耐久性を誇る最高品質のSU316L鋼を使用しています。
+                    オーストラリア・ピルバラから取り寄せた鉱石を使用し、選び抜かれた日本の職人によって加工されています。
+                    一生使えるスキンジュエリーは、世代を超えて受け継ぐことができます。
+                    固い決意を込めたお守りとして、プレゼントにもオススメです。
+                </p>
+
+            </div>
+
+        </section>
     </main>
 
 </body>

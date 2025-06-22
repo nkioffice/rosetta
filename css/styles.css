@@ -47,6 +47,7 @@ body {
     color: white;
     padding: 10px;
     z-index: 1000;
+    transition: background-color 0.5s ease;
 }
 
 .nav-header a {
@@ -246,4 +247,43 @@ body {
 .purchase-now{
     background-color: var(--red);
     color: white;
+}
+
+/**/
+.desc{
+    line-height: 1.7rem;
+    padding: 0 20px ;
+    font-size: small;
+    
+}
+.story-video{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    object-fit: contain;
+    object-position: center;
+    z-index: -2;
+}
+#story .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+}
+#story .overlay a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    border: solid 1px white;
+    margin: 20px;
+    margin-top: auto;
+    background-color: rgb(255, 255, 255,0.1);
 }
