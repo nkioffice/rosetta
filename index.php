@@ -136,37 +136,103 @@ $seconds = $remainingSeconds % 60;
             </div>
 
         </section>
-        <section id="story" class="sect">
-            <div class="title-ct">
-                <img src="./res/img/logo.png" alt="" class="icon">
-                <h3>STORY</h3>
-                <h2 style="font-size: x-small;">ブランドストーリー</h2>
+        <div class="title-ct">
+            <img src="./res/img/logo.png" alt="" class="icon">
+            <h3>STORY</h3>
+            <h2 style="font-size: x-small;">ブランドストーリー</h2>
+        </div>
+        <div class="carousel">
+            <button id="prev">＜
+            </button>
+            <button id="next">
+                ＞
+            </button>
+            <div class="carousel-wrapper">
+                <section id="design" class="sect carousel-item">
+
+                    <div class="sub-hero">
+                        <img src="./res/img/design.jpg" alt="">
+                        <div class="overlay">
+                            <h3>DESIGN</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="desc-ct">
+                        <h4 style="text-align: center;padding: 20px;">デザイナーFrancesco Gallo氏1</h4>
+                        <p class="desc">
+                            ヴェネツィア発のブランドROSETTAからTOKYOを拠点としたニューライン発足。
+                            ROSETTAのスキンジュエリーは、理論上10万年以上の耐久性を誇る最高品質のSU316L鋼を使用しています。
+                            オーストラリア・ピルバラから取り寄せた鉱石を使用し、選び抜かれた日本の職人によって加工されています。
+                            一生使えるスキンジュエリーは、世代を超えて受け継ぐことができます。
+                            固い決意を込めたお守りとして、プレゼントにもオススメです。
+                        </p>
+
+                        <a href="" class="link1">詳細を見る</a>
+
+                    </div>
+
+                </section>
+                <section id="ingredients" class="sect carousel-item">
+
+                    <div class="sub-hero">
+                        <img src="./res/img/design.jpg" alt="">
+                        <div class="overlay">
+                            <h3>DESIGN</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="desc-ct">
+                        <h4 style="text-align: center;padding: 20px;">デザイナーFrancesco Gallo氏2</h4>
+                        <p class="desc">
+                            ヴェネツィア発のブランドROSETTAからTOKYOを拠点としたニューライン発足。
+                            ROSETTAのスキンジュエリーは、理論上10万年以上の耐久性を誇る最高品質のSU316L鋼を使用しています。
+                            オーストラリア・ピルバラから取り寄せた鉱石を使用し、選び抜かれた日本の職人によって加工されています。
+                            一生使えるスキンジュエリーは、世代を超えて受け継ぐことができます。
+                            固い決意を込めたお守りとして、プレゼントにもオススメです。
+                        </p>
+
+                        <a href="" class="link1">詳細を見る</a>
+
+                    </div>
+
+                </section>
+                <section id="ingredients" class="sect carousel-item">
+
+                    <div class="sub-hero">
+                        <img src="./res/img/design.jpg" alt="">
+                        <div class="overlay">
+                            <h3>DESIGN</h3>
+                        </div>
+                    </div>
+
+
+                    <div class="desc-ct">
+                        <h4 style="text-align: center;padding: 20px;">デザイナーFrancesco Gallo氏3</h4>
+                        <p class="desc">
+                            ヴェネツィア発のブランドROSETTAからTOKYOを拠点としたニューライン発足。
+                            ROSETTAのスキンジュエリーは、理論上10万年以上の耐久性を誇る最高品質のSU316L鋼を使用しています。
+                            オーストラリア・ピルバラから取り寄せた鉱石を使用し、選び抜かれた日本の職人によって加工されています。
+                            一生使えるスキンジュエリーは、世代を超えて受け継ぐことができます。
+                            固い決意を込めたお守りとして、プレゼントにもオススメです。
+                        </p>
+
+                        <a href="" class="link1">詳細を見る</a>
+
+                    </div>
+
+                </section>
             </div>
 
-            <div style="position: relative;height:100vw;overflow: hidden;">
-                <video class="story-video"
-                    autoplay muted loop playsinline preload="auto"
-                    poster="./res/img/placeholder.jpg">
-                    <source src="./res/mov/story.mp4" type="video/mp4">
-                </video>
-                <div class="overlay">
-                    <a href="./story.php">ブランドストーリーを詳しく学ぶ</a>
-                </div>
 
-            </div>
-            <div class="desc-ct">
-                <h4 style="text-align: center;padding: 20px;">ROSETTA-職人の魂が宿るスキンジュエリー</h4>
-                <p class="desc">
-                    ヴェネツィア発のブランドROSETTAからTOKYOを拠点としたニューライン発足。
-                    ROSETTAのスキンジュエリーは、理論上10万年以上の耐久性を誇る最高品質のSU316L鋼を使用しています。
-                    オーストラリア・ピルバラから取り寄せた鉱石を使用し、選び抜かれた日本の職人によって加工されています。
-                    一生使えるスキンジュエリーは、世代を超えて受け継ぐことができます。
-                    固い決意を込めたお守りとして、プレゼントにもオススメです。
-                </p>
+        </div>
+        <div class="carousel-indicators">
+            <div class="indi active"></div>
+            <div class="indi"></div>
+            <div class="indi"></div>
+        </div>
 
-            </div>
-
-        </section>
     </main>
 
 </body>
@@ -182,6 +248,83 @@ $seconds = $remainingSeconds % 60;
             img.style.height = w + 'px';
         })
     }
+    //カルーセル
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    let carouselPosition = 0; //初期値は0
+    const maxCarouselPosition = document.querySelectorAll('.carousel-item').length - 1;
+
+    document.getElementById('next').addEventListener('click', function() {
+        moveCarousel(carouselPosition + 1);
+    })
+    document.getElementById('prev').addEventListener('click', function() {
+        moveCarousel(carouselPosition - 1);
+    })
+
+    carouselWrapper.addEventListener('mousedown', function(e) {
+        console.log(e);
+
+    })
+
+    function moveCarousel(newPos) {
+        if (newPos < 0) {
+            carouselPosition = maxCarouselPosition;
+        } else if (newPos > maxCarouselPosition) {
+            carouselPosition = 0
+        } else {
+            carouselPosition = newPos;
+        }
+        let percent = carouselPosition * 100;
+        carouselWrapper.style.transition = "transform 0.7s ease"
+        carouselWrapper.style.transform = `translateX(-${percent}%)`
+
+        setActiveIndicator(carouselPosition)
+
+    }
+    const indicators = document.querySelectorAll('.carousel-indicators .indi');
+
+    const setActiveIndicator = (x) => {
+        indicators.forEach((el, idx) => {
+            el.classList.toggle('active', idx === x);
+        });
+    };
+
+    let isSwiping = false;
+
+    function startSwipe(event) {
+        isTouch = true;
+        startX = event.touches[0].clientX;
+        moveX = 0;
+        isSwiping = true;
+        carouselWrapper.style.transition = "none"; // アニメーションを無効化（スワイプ中の動きがスムーズに）
+    }
+
+    function moveSwipe(event) {
+        if (!isSwiping) return;
+        moveX = event.touches[0].clientX - startX;
+        const translateX = -carouselPosition * 100 + (moveX / window.innerWidth) * 100; // スワイプの移動に合わせる
+        carouselWrapper.style.transform = `translateX(${translateX}%)`;
+    }
+
+    function endSwipe() {
+        if (!isSwiping) return;
+        isSwiping = false;
+
+
+        // スワイプ距離が一定以上ならスライド移動
+        if (moveX > 50) { // 右スワイプ（前の画像）
+            moveCarousel(carouselPosition - 1)
+        } else if (moveX < -50) { // 左スワイプ（次の画像）
+            moveCarousel(carouselPosition + 1)
+        }else{
+            moveCarousel(carouselPosition)
+        }
+
+
+    }
+    // タッチ操作イベント
+    carouselWrapper.addEventListener("touchstart", startSwipe);
+    carouselWrapper.addEventListener("touchmove", moveSwipe);
+    carouselWrapper.addEventListener("touchend", endSwipe);
 </script>
 
 </html>

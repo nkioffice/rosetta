@@ -1,8 +1,8 @@
 :root {
-    --red:rgb(191, 76, 76);
+    --red: rgb(191, 76, 76);
     --text-color: #1f2937;
-    --btn-color1:#393d66;
-    --btn-color2:#ffffff;
+    --btn-color1: #393d66;
+    --btn-color2: #ffffff;
     --link-color: #425775;
 }
 
@@ -152,9 +152,10 @@ body {
 }
 
 /**/
-.sect{
+.sect {
     padding: 10px;
 }
+
 .title-ct {
     display: flex;
     flex-direction: column;
@@ -167,17 +168,20 @@ body {
     height: 15px;
 
 }
-.items-ct{
+
+.items-ct {
     overflow: auto;
-    padding: 10px ;
-    
+    padding: 10px;
+
 }
-.items{
+
+.items {
     display: flex;
     gap: 10px;
-    
+
 }
-.item-card{
+
+.item-card {
     display: block;
     color: var(--text-color);
     text-decoration: none;
@@ -188,75 +192,165 @@ body {
     flex-shrink: 0;
     background-color: #fff;
 }
+
 .item-ct {
     padding: 10px;
 }
-.item-comment{
+
+.item-comment {
     font-size: x-small;
     color: #777;
 }
-.item-info{
+
+.item-info {
     padding: 0 5px;
     display: flex;
     flex-direction: column;
     gap: 4px;
     padding: 4px 0;
 }
-.item-name-1{
+
+.item-name-1 {
     font-size: small;
     font-weight: normal;
-    
+
 }
-.item-price-1{
+
+.item-price-1 {
     font-size: small;
-    line-height: 1em; 
+    line-height: 1em;
 }
-.item-price-dis{
+
+.item-price-dis {
     line-height: 1em;
     color: red;
     font-size: small;
 }
-.strike{
+
+.strike {
     text-decoration: line-through;
 }
-.sp-label{
+
+.sp-label {
     /*font-family: "GFS Didot", serif;*/
     color: white;
-    background-color:var(--red);
+    background-color: var(--red);
     font-size: x-small;
     padding: 2px 4px;
     align-self: flex-start;
 }
+
 .item-img-1 {
     width: 100%;
 }
-.item-btns{
-    font-size: small;    
+
+.item-btns {
+    font-size: small;
     display: flex;
     flex-direction: column;
     gap: 2px;
     padding: 2px 0;
 
 }
-.item-btns button{
+
+.item-btns button {
     padding: 10px 2px;
     border: solid 1px rgb(213, 213, 213);
-    
+
 }
 
-.purchase-now{
+.purchase-now {
     background-color: var(--red);
     color: white;
 }
 
-/**/
-.desc{
-    line-height: 1.7rem;
-    padding: 0 20px ;
-    font-size: small;
+/*カルーセル*/
+.carousel {
+    overflow: hidden;
+    position: relative;
+}
+.carousel button{
+    background-color: #fff;
+    padding: 10px 4px;
+    border: solid #333 1px;
+    margin: 3px;
+    z-index: 1000;
+}
+#prev{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+#next{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+.carousel-wrapper {
+    transition: transform 0.7s ease;
+    display: flex;
     
 }
-.story-video{
+
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px 0;
+}
+
+.indi {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: solid 1px #333;
+}
+
+.active {
+    background-color: #333;
+}
+
+.carousel-item {
+    border: solid #eee 1px;
+    min-width: 100%;
+}
+
+/**/
+.sub-hero {
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.sub-hero img {
+    width: 100%;
+}
+
+.sub-hero .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1rem;
+}
+
+.desc {
+    line-height: 1.7rem;
+    padding: 0 20px;
+    font-size: small;
+}
+
+.story-video {
     position: absolute;
     top: 50%;
     left: 0;
@@ -266,24 +360,11 @@ body {
     object-position: center;
     z-index: -2;
 }
-#story .overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-}
-#story .overlay a{
-    color: white;
-    text-align: center;
-    text-decoration: none;
+
+.link1 {
+    color: var(--text-color);
     display: block;
-    padding: 20px;
-    border: solid 1px white;
-    margin: 20px;
-    margin-top: auto;
-    background-color: rgb(255, 255, 255,0.1);
+    text-align: center;
+    font-size: small;
+    padding: 10px 0;
 }
