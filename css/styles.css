@@ -368,3 +368,29 @@ body {
     font-size: small;
     padding: 10px 0;
 }
+/*review*/
+.review-summary{
+    display: flex;
+    align-items: center;
+    font-size: small;
+    gap: 10px;
+}
+.stars{
+    height: 20px;
+}
+.star{
+    height: 100%;
+}
+.p-review{
+    margin: 0 20px;
+    background-color: rgb(255, 253, 240);
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+.p-review h4{
+    font-weight: normal;
+}
