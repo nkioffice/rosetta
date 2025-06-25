@@ -71,6 +71,7 @@ $seconds = $remainingSeconds % 60;
             </div>
             <div class="items-ct">
                 <div class="items">
+
                     <a href="./item.php" class="item-card">
                         <div class="item-ct">
                             <div class="item-img-ct">
@@ -78,7 +79,7 @@ $seconds = $remainingSeconds % 60;
                             </div>
                             <div class="item-info">
                                 <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-S 1.2mm snakechain SU316L</h3>
+                                <h3 class="item-name-1">Classe-S 1.2mm snakechain SUS316L</h3>
                                 <p class="item-price-1 strike">¥219,000</p>
                                 <p class="item-price-dis">¥25,800</p>
                                 <p class="sp-label">24時間限定価格</p>
@@ -98,7 +99,7 @@ $seconds = $remainingSeconds % 60;
                             </div>
                             <div class="item-info">
                                 <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-A 1.2mm snakechain SU316L</h3>
+                                <h3 class="item-name-1">Classe-A 1.2mm snakechain SUS316L</h3>
                                 <p class="item-price-1 strike">¥185,000</p>
                                 <p class="item-price-dis">¥19,800</p>
                                 <p class="sp-label">24時間限定価格</p>
@@ -118,7 +119,7 @@ $seconds = $remainingSeconds % 60;
                             </div>
                             <div class="item-info">
                                 <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-N 1.2mm snakechain SU316L</h3>
+                                <h3 class="item-name-1">Classe-N 1.2mm snakechain SUS316L</h3>
                                 <p class="item-price-1 strike">¥103,000</p>
                                 <p class="item-price-dis">¥15,800</p>
                                 <p class="sp-label">24時間限定価格</p>
@@ -132,14 +133,39 @@ $seconds = $remainingSeconds % 60;
                         </div>
                     </a>
 
+                    <a href="./items.php" class="item-card" style="display: flex;align-items: center;justify-content: center;">
+                        全ての商品を見る
+                    </a>
+
+
                 </div>
             </div>
 
+
+
+        </section>
+        <section id="top-menu" class="top-menu">
+            <a href="./items.php" class="link-img-ct">
+                <img src="./res/img/item_img2.png" alt="" class="link-img">
+                <div class="overlay">
+                    <p>ALL ITEMS</p>
+                    <p style="font-size: 1rem;">全商品</p>
+                </div>
+            </a>
+            <a href="./#ingredients" class="link-img-ct scroll-to">
+                <img src="./res/img/design.jpg" alt="" class="link-img">
+                <div class="overlay">
+                    <p>STORY OF ROSETTA</p>
+                    <p style="font-size: 1rem;">ブランドストーリー</p>
+                </div>
+            </a>
+
+            </a>
         </section>
         <div class="title-ct">
             <img src="./res/img/logo.png" alt="" class="icon">
-            <h3>History</h3>
-            <h2 style="font-size: x-small;">ROSETTAの歴史</h2>
+            <h3>Story</h3>
+            <h2 style="font-size: x-small;">最高品質のブランド</h2>
         </div>
         <div class="carousel">
             <button id="prev">＜
@@ -162,8 +188,8 @@ $seconds = $remainingSeconds % 60;
                         <h4 style="text-align: center;padding: 20px;">オーストラリア・ピルバラ鉱山</h4>
                         <p class="desc">
                             ヴェネツィア発のブランドROSETTAからTOKYOを拠点としたニューライン発足。
-                            ROSETTAのスキンジュエリーは、理論上10万年以上の耐久性を誇る最高品質のSU316L鋼を使用しています。
-                            オーストラリア・ピルバラから取り寄せた鉱石を使用し、選び抜かれた日本の職人によって加工されています。
+                            ROSETTAのスキンジュエリーは、理論上10万年以上の耐久性を誇る最高品質のSUS316L鋼を使用しています。
+                            オーストラリア・ピルバラから取り寄せた鉱石を使用し、選び抜かれた職人によって加工されています。
                             一生使えるスキンジュエリーは、世代を超えて受け継ぐことができます。
                             固い決意を込めたお守りとして、プレゼントにもオススメです。
                         </p>
@@ -173,7 +199,7 @@ $seconds = $remainingSeconds % 60;
                     </div>
 
                 </section>
-                <section id="ingredients" class="sect carousel-item">
+                <section id="shop" class="sect carousel-item">
 
                     <div class="sub-hero">
                         <img src="./res/img/shop.jpg" alt="">
@@ -187,10 +213,9 @@ $seconds = $remainingSeconds % 60;
                         <h4 style="text-align: center;padding: 20px;">直営店</h4>
                         <p class="desc">
                             「ROSETTA TOKYO」の直営店情報<br>
-                            ※正規販売店は本公式サイトまたはROSETTA直営店のみ。
-                            類似品にご注意ください。
-                            <br>
-                            ※特別先行販売クーポンは、先行販売期間中及び本サイトのみ有効です。
+                            <span class="kome">※1正規販売店は本公式サイトまたはROSETTA直営店のみ。
+                                類似品にご注意ください。
+                                ※2特別先行販売クーポンは、先行販売期間中及び本サイトのみ有効です。</span>
                         </p>
 
                         <a href="" class="link1">詳細を見る</a>
@@ -214,8 +239,7 @@ $seconds = $remainingSeconds % 60;
                         <p class="desc">
                             ヴェネツィア発のブランドROSETTAからTOKYOを拠点としたニューライン発足にあたり、
                             Francesco Gallo氏をチーフデザイナーとして起用。<br>
-                            シンプルながらも洗練された幾何学的デザインを得意としており、
-                            ROSETTA TOKYOのコンセプトに相応しい優美さを表現。
+                            シンプルながらも緻密に計算された幾何学的デザインは、ROSETTAらしい洗練された優美さを実現しました。
 
                         </p>
 
@@ -224,45 +248,139 @@ $seconds = $remainingSeconds % 60;
                     </div>
 
                 </section>
-                <
-
-                    </div>
 
 
             </div>
-            <div class="carousel-indicators">
+
+
+        </div>
+        <div class="carousel-indicators">
+            <div class="indi active"></div>
+            <div class="indi"></div>
+            <div class="indi"></div>
+
+        </div>
+        <div class="title-ct">
+            <img src="./res/img/logo.png" alt="" class="icon">
+            <h3>REVIEWS</h3>
+            <h2 style="font-size:x-small;">お客様の声</h2>
+        </div>
+        <section class="sect" id="reviews">
+            <div class="p-review">
+                <h4>総評価</h4>
+                <div class="review-summary">
+                    <div class="stars">
+                        <img src="./res/img/star-f.png" alt="" class="star">
+                        <img src="./res/img/star-f.png" alt="" class="star">
+                        <img src="./res/img/star-f.png" alt="" class="star">
+                        <img src="./res/img/star-f.png" alt="" class="star">
+                        <img src="./res/img/star-h.png" alt="" class="star">
+
+                    </div>
+                    <div>
+                        (4.8)
+                    </div>
+                    <div>
+                        118件のレビュー
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel">
+                <button id="r-prev">＜</button>
+                <button id="r-next">＞</button>
+                <div class="r-c-wrapper">
+
+                    <div class="r-c-item">
+                        <div class="r-card">
+                            <div class="stars">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                            </div>
+                            <h5 class="review-title">細いのに圧倒的存在感<p class="review-user">✔購入済みのユーザー</p>
+                            </h5>
+
+                            <p class="review-desc">細いのに立体感があり、素肌に付けているだけでとても目立ちます。
+                                今までネックレスを付けていても誰かに反応されることはなかったのですが、<br>
+                                ROSETTAのネックレスは存在感があって、色んな人に「それどこの？」と
+                                聞かれます。
+                            </p>
+                            <p class="review-date">2025-06-25</p>
+                        </div>
+
+                    </div>
+                    <div class="r-c-item">
+                        <div class="r-card">
+                            <div class="stars">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                                <img src="./res/img/star-f.png" alt="" class="star">
+                            </div>
+                            <h5 class="review-title">翌日には届いた<p class="review-user">✔購入済みのユーザー</p>
+                            </h5>
+
+                            <p class="review-desc">
+                                後払いで購入し、翌日には手元に届きました！<br>
+                                彼氏へのプレゼント用で購入しましたが、
+                                箱も高級感があって、品質保証書も付いていたので、
+                                プレゼント用に最適だと思いました！
+                                次はお揃いで購入しようと思います！
+                            </p>
+                            <p class="review-date">2025-06-25</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="r-indicators" style="display: none;">
                 <div class="indi active"></div>
                 <div class="indi"></div>
-                <div class="indi"></div>
+
 
             </div>
-            <div class="title-ct">
-                <img src="./res/img/logo.png" alt="" class="icon">
-                <h3>REVIEWS</h3>
-                <h2 style="font-size:x-small;">お客様の声</h2>
-            </div>
-            <section class="sect" id="reviews">
-                <div class="p-review">
-                    <h4>総評価</h4>
-                    <div class="review-summary">
-                        <div class="stars">
-                            <img src="./res/img/star-f.png" alt="" class="star">
-                            <img src="./res/img/star-f.png" alt="" class="star">
-                            <img src="./res/img/star-f.png" alt="" class="star">
-                            <img src="./res/img/star-f.png" alt="" class="star">
-                            <img src="./res/img/star-h.png" alt="" class="star">
-
-                        </div>
-                        <div>
-                            (4.8)
-                        </div>
-                        <div>
-                            118件のレビュー
-                        </div>
-                    </div>
-
+        </section>
+        <div class="features">
+            <div class="f-item">
+                <div class="f-title-wp">
+                    <img src="./res/img/guarantee.png" alt="" class="f-icon">
+                    <h5 class="f-title">品質保証書付き</h5>
                 </div>
-            </section>
+                <div class="f-desc">
+                    全品にROSETTAが発行する品質保証書が付属。<br>
+                    贈り物としても、安心してお選びいただけます。
+                </div>
+
+            </div>
+            <div class="f-item">
+                <div class="f-title-wp">
+                    <img src="./res/img/send.png" alt="" class="f-icon">
+                    <h5 class="f-title">送料無料サービス</h5>
+                </div>
+                <div class="f-desc">
+                    19000円以上のお買い上げで送料無料<br>
+                    <span class="kome">※北海道・沖縄は別途送料がかかります</span>
+                </div>
+
+            </div>
+            <div class="f-item">
+                <div class="f-title-wp">
+                    <img src="./res/img/card.png" alt="" class="f-icon">
+                    <h5 class="f-title">豊富な決済サービス</h5>
+                </div>
+                <div class="f-desc">
+                    セキュアなカード決済、後払い決済にも対応。<br>
+                    欲しいものがいつでもすぐに手に入ります。
+                </div>
+
+            </div>
+        </div>
+
     </main>
 
 </body>
@@ -278,83 +396,180 @@ $seconds = $remainingSeconds % 60;
             img.style.height = w + 'px';
         })
     }
-    //カルーセル
-    const carouselWrapper = document.querySelector('.carousel-wrapper');
-    let carouselPosition = 0; //初期値は0
-    const maxCarouselPosition = document.querySelectorAll('.carousel-item').length - 1;
 
-    document.getElementById('next').addEventListener('click', function() {
-        moveCarousel(carouselPosition + 1);
-    })
-    document.getElementById('prev').addEventListener('click', function() {
-        moveCarousel(carouselPosition - 1);
-    })
+    setCarousel('.carousel-wrapper', '.carousel-item', '.carousel-indicators .indi', 'next', 'prev')
+    setCarousel('.r-c-wrapper', '.r-c-item', '.r-indicators .indi', 'r-next', 'r-prev')
 
-    carouselWrapper.addEventListener('mousedown', function(e) {
-        console.log(e);
-
+    document.querySelectorAll('.scroll-to').forEach(elem => {
+        elem.addEventListener('click', function(e) {
+            e.preventDefault();
+            let id = elem.hash.slice(1)
+            let target = document.getElementById(id);
+            target.scrollIntoView({
+                block:"center",behavior:"smooth"
+            })
+        })
     })
 
-    function moveCarousel(newPos) {
-        if (newPos < 0) {
-            carouselPosition = maxCarouselPosition;
-        } else if (newPos > maxCarouselPosition) {
-            carouselPosition = 0
-        } else {
-            carouselPosition = newPos;
+
+    function setCarousel(wrapperClass, itemClass, indiClass, nextId, prevId) {
+        //カルーセル
+        const carouselWrapper = document.querySelector(wrapperClass);
+        let carouselPosition = 0; //初期値は0
+        const maxCarouselPosition = document.querySelectorAll(itemClass).length - 1;
+
+        document.getElementById(nextId).addEventListener('click', function() {
+            moveCarousel(carouselPosition + 1);
+        })
+        document.getElementById(prevId).addEventListener('click', function() {
+            moveCarousel(carouselPosition - 1);
+        })
+
+        carouselWrapper.addEventListener('mousedown', function(e) {
+            console.log(e);
+
+        })
+
+        function moveCarousel(newPos) {
+            if (newPos < 0) {
+                carouselPosition = maxCarouselPosition;
+            } else if (newPos > maxCarouselPosition) {
+                carouselPosition = 0
+            } else {
+                carouselPosition = newPos;
+            }
+            let percent = carouselPosition * 100;
+            carouselWrapper.style.transition = "transform 0.7s ease"
+            carouselWrapper.style.transform = `translateX(-${percent}%)`
+
+            setActiveIndicator(carouselPosition)
+
         }
-        let percent = carouselPosition * 100;
-        carouselWrapper.style.transition = "transform 0.7s ease"
-        carouselWrapper.style.transform = `translateX(-${percent}%)`
+        const indicators = document.querySelectorAll(indiClass);
 
-        setActiveIndicator(carouselPosition)
+        const setActiveIndicator = (x) => {
+            indicators.forEach((el, idx) => {
+                el.classList.toggle('active', idx === x);
+            });
+        };
 
-    }
-    const indicators = document.querySelectorAll('.carousel-indicators .indi');
+        let isSwiping = false;
 
-    const setActiveIndicator = (x) => {
-        indicators.forEach((el, idx) => {
-            el.classList.toggle('active', idx === x);
-        });
-    };
-
-    let isSwiping = false;
-
-    function startSwipe(event) {
-        isTouch = true;
-        startX = event.touches[0].clientX;
-        moveX = 0;
-        isSwiping = true;
-        carouselWrapper.style.transition = "none"; // アニメーションを無効化（スワイプ中の動きがスムーズに）
-    }
-
-    function moveSwipe(event) {
-        if (!isSwiping) return;
-        moveX = event.touches[0].clientX - startX;
-        const translateX = -carouselPosition * 100 + (moveX / window.innerWidth) * 100; // スワイプの移動に合わせる
-        carouselWrapper.style.transform = `translateX(${translateX}%)`;
-    }
-
-    function endSwipe() {
-        if (!isSwiping) return;
-        isSwiping = false;
-
-
-        // スワイプ距離が一定以上ならスライド移動
-        if (moveX > 50) { // 右スワイプ（前の画像）
-            moveCarousel(carouselPosition - 1)
-        } else if (moveX < -50) { // 左スワイプ（次の画像）
-            moveCarousel(carouselPosition + 1)
-        } else {
-            moveCarousel(carouselPosition)
+        function startSwipe(event) {
+            isTouch = true;
+            startX = event.touches[0].clientX;
+            moveX = 0;
+            isSwiping = true;
+            carouselWrapper.style.transition = "none"; // アニメーションを無効化（スワイプ中の動きがスムーズに）
         }
 
+        function moveSwipe(event) {
+            if (!isSwiping) return;
+            moveX = event.touches[0].clientX - startX;
+            const translateX = -carouselPosition * 100 + (moveX / window.innerWidth) * 100; // スワイプの移動に合わせる
+            carouselWrapper.style.transform = `translateX(${translateX}%)`;
+        }
 
+        function endSwipe() {
+            if (!isSwiping) return;
+            isSwiping = false;
+
+
+            // スワイプ距離が一定以上ならスライド移動
+            if (moveX > 50) { // 右スワイプ（前の画像）
+                moveCarousel(carouselPosition - 1)
+            } else if (moveX < -50) { // 左スワイプ（次の画像）
+                moveCarousel(carouselPosition + 1)
+            } else {
+                moveCarousel(carouselPosition)
+            }
+
+
+        }
+        // タッチ操作イベント
+        carouselWrapper.addEventListener("touchstart", startSwipe);
+        carouselWrapper.addEventListener("touchmove", moveSwipe);
+        carouselWrapper.addEventListener("touchend", endSwipe);
     }
-    // タッチ操作イベント
-    carouselWrapper.addEventListener("touchstart", startSwipe);
-    carouselWrapper.addEventListener("touchmove", moveSwipe);
-    carouselWrapper.addEventListener("touchend", endSwipe);
+    /*
+        //カルーセル
+        const carouselWrapper = document.querySelector('.carousel-wrapper');
+        let carouselPosition = 0; //初期値は0
+        const maxCarouselPosition = document.querySelectorAll('.carousel-item').length - 1;
+
+        document.getElementById('next').addEventListener('click', function() {
+            moveCarousel(carouselPosition + 1);
+        })
+        document.getElementById('prev').addEventListener('click', function() {
+            moveCarousel(carouselPosition - 1);
+        })
+
+        carouselWrapper.addEventListener('mousedown', function(e) {
+            console.log(e);
+
+        })
+
+        function moveCarousel(newPos) {
+            if (newPos < 0) {
+                carouselPosition = maxCarouselPosition;
+            } else if (newPos > maxCarouselPosition) {
+                carouselPosition = 0
+            } else {
+                carouselPosition = newPos;
+            }
+            let percent = carouselPosition * 100;
+            carouselWrapper.style.transition = "transform 0.7s ease"
+            carouselWrapper.style.transform = `translateX(-${percent}%)`
+
+            setActiveIndicator(carouselPosition)
+
+        }
+        const indicators = document.querySelectorAll('.carousel-indicators .indi');
+
+        const setActiveIndicator = (x) => {
+            indicators.forEach((el, idx) => {
+                el.classList.toggle('active', idx === x);
+            });
+        };
+
+        let isSwiping = false;
+
+        function startSwipe(event) {
+            isTouch = true;
+            startX = event.touches[0].clientX;
+            moveX = 0;
+            isSwiping = true;
+            carouselWrapper.style.transition = "none"; // アニメーションを無効化（スワイプ中の動きがスムーズに）
+        }
+
+        function moveSwipe(event) {
+            if (!isSwiping) return;
+            moveX = event.touches[0].clientX - startX;
+            const translateX = -carouselPosition * 100 + (moveX / window.innerWidth) * 100; // スワイプの移動に合わせる
+            carouselWrapper.style.transform = `translateX(${translateX}%)`;
+        }
+
+        function endSwipe() {
+            if (!isSwiping) return;
+            isSwiping = false;
+
+
+            // スワイプ距離が一定以上ならスライド移動
+            if (moveX > 50) { // 右スワイプ（前の画像）
+                moveCarousel(carouselPosition - 1)
+            } else if (moveX < -50) { // 左スワイプ（次の画像）
+                moveCarousel(carouselPosition + 1)
+            } else {
+                moveCarousel(carouselPosition)
+            }
+
+
+        }
+        // タッチ操作イベント
+        carouselWrapper.addEventListener("touchstart", startSwipe);
+        carouselWrapper.addEventListener("touchmove", moveSwipe);
+        carouselWrapper.addEventListener("touchend", endSwipe);
+        */
 </script>
 
 </html>

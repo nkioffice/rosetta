@@ -2,11 +2,11 @@
     <div class="notice">
 
         <p style="font-size: small;"><button id="close-notice" style="margin-right: 10px;">x</button>
-        日本特別先行販売クーポン有効期限<span id="count-down"></span></p>
+            日本特別先行販売クーポン有効期限<span id="count-down"></span></p>
     </div>
 
     <div class="nav-header">
-        <button class="nav-btn">三</button>
+        <button class="nav-btn">≡</button>
         <div class="h-logo-ct">
             <a href="./index.php" class="logo-ct">
                 <img src="./res/img/wlogo.png" alt="" class="h-logo-icon">
@@ -14,6 +14,7 @@
             </a>
         </div>
         <nav>
+
             <a href="./cart.php">Cart</a>
             <a href="./items">Items</a>
 
@@ -22,6 +23,29 @@
 
 
 </header>
+
+<nav class="nav-window">
+    <div class="nav-ct">
+        <div class="nav-title">
+            <h4 style="font-weight: 400;">メインメニュー</h4>
+            <button>Close</button>
+        </div>
+
+        <ul>
+            <li><a href="">セール</a></li>
+            <hr>
+            <li><a href="">ROSETTAについて知る</a></li>
+
+            <li><a href="">全商品一覧</a></li>
+            <li><a href="">ネックレス</a></li>
+            <li><a href="">ブレスレット</a></li>
+            <li><a href="">その他</a></li>
+        </ul>
+    </div>
+
+
+</nav>
+<div class="nav-overlay"></div>
 <script src="./header_margin.js"></script>
 <script src="./handle_notice.js"></script>
 <script>

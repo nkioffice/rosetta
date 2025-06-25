@@ -45,7 +45,7 @@ body {
     left: 0;
     height: 60px;
     color: white;
-    padding: 10px;
+    padding: 10px 0;
     z-index: 1000;
     transition: background-color 0.5s ease;
 }
@@ -57,6 +57,8 @@ body {
 
 .nav-btn {
     color: white;
+    padding: 10px;
+    font-size: x-large;
 }
 
 .h-logo-ct {
@@ -88,6 +90,46 @@ body {
     object-position: center;
 }
 
+/*ナヴィゲーション*/
+.nav-window{
+    background-color: #ffffff;
+    width: 90%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 20px 30px;
+}
+.nav-window a{
+    display: block;
+    padding: 15px 0;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: small;
+}
+.nav-window ul{
+    list-style-type: none;
+}
+.nav-overlay{
+   
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1500;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* Safari/iOS */
+}
+.nav-title{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+    
+}
 /* ルート要素を相対配置にして動画を敷き詰める */
 .hero {
     position: relative;
@@ -263,6 +305,14 @@ body {
     background-color: var(--red);
     color: white;
 }
+.item-link{
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+}
+
 
 /*カルーセル*/
 .carousel {
@@ -272,9 +322,10 @@ body {
 .carousel button{
     background-color: #fff;
     padding: 10px 4px;
-    border: solid #333 1px;
+    border: solid #dbdbdb 1px;
     margin: 3px;
     z-index: 1000;
+    font-weight: bold;
 }
 #prev{
     position: absolute;
@@ -302,8 +353,8 @@ body {
 }
 
 .indi {
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     border: solid 1px #333;
 }
@@ -368,6 +419,56 @@ body {
     font-size: small;
     padding: 10px 0;
 }
+/*top-menu*/
+.top-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.link-img-ct{
+    position: relative;
+    display: block;
+    
+    padding: 0;
+    overflow: hidden;
+    height: 200px;
+}
+.link-img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    z-index: -2;
+}
+.link-img-ct .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
+
+.link-text{
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 200;
+}
+
+
 /*review*/
 .review-summary{
     display: flex;
@@ -393,4 +494,92 @@ body {
 }
 .p-review h4{
     font-weight: normal;
+}
+
+/*レビューカルーセル*/
+.r-c-wrapper{
+    display: flex;
+    position: relative;
+}
+.r-c-wrapper button{
+    font-weight: bold;
+}
+
+#r-prev{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+#r-next{
+    position: absolute;
+    top: 50%;
+    right: 10px;
+}
+.r-c-item{
+    min-width: 100%;
+    padding: 20px 40px ;
+    
+}
+.review-title{
+    font-size: 1rem;
+}
+.review-user{
+    font-size: small;
+    font-weight: normal;
+}
+.r-card{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.1);
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+}
+.r-indicators{
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+.review-date{
+    align-self: flex-end;
+    font-size: x-small;
+}
+/*特徴*/
+.features{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+}
+.f-title-wp{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.f-icon{
+    height: 30px;
+}
+.f-title{
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+.f-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.f-desc{
+    font-size: small;
+    padding: 20px 0;
+}
+
+.kome{
+    font-size: x-small;
+    color: #666;
 }
