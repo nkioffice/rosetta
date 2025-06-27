@@ -2,6 +2,9 @@
 session_start();
 session_regenerate_id();
 
+require_once './scripts/db_connect.php';
+require_once './scripts/functions.php';
+
 // 初回訪問時間の保存
 if (!isset($_SESSION['firstVisit'])) {
     $_SESSION['firstVisit'] = (new DateTime())->format('Y-m-d H:i:s');  // 文字列として保存
@@ -20,6 +23,17 @@ $remainingSeconds = max(0, 24 * 60 * 60 - $elapsedSeconds);  // 24時間 = 86400
 $hours = floor($remainingSeconds / 3600);
 $minutes = floor(($remainingSeconds % 3600) / 60);
 $seconds = $remainingSeconds % 60;
+
+if (isset($_GET['id']) && !empty($_GET['id'])) {
+    $item = getItemById($pdo, $_GET['id']);
+    if (!$item) {
+        http_response_code(404);
+        exit;
+    }
+} else {
+    http_response_code(404);
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -31,6 +45,7 @@ $seconds = $remainingSeconds % 60;
     <meta name="description" content="<?= $SITE_DESC ?>">
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/item.css">
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <title>ROSETTA TOKYO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,11 +57,73 @@ $seconds = $remainingSeconds % 60;
 
 <body>
     <?php include 'c_header.php'; ?>
-    
+
 
     <main>
-       
-       
+        <section id="item" class="sect">
+            <div class="img-carousel">
+                <button id="img-prev">＜</button>
+                <button id="img-next">＞</button>
+                <div class="img-carousel-wrapper">
+                    <div class="img-carousel-item">
+                        <img src="./items/item1.jpg" alt="" class="item-hero">
+                    </div>
+                    <div class="img-carousel-item">
+                        <img src="./items/item2.jpg" alt="" class="item-hero">
+                    </div>
+                    <div class="img-carousel-item">
+                        <img src="./items/item3.jpg" alt="" class="item-hero">
+                    </div>
+                </div>
+            </div>
+            <div class="img-indicators" style="display: none;">
+                <div class="indi active">
+                    <img src="./items/item1.jpg" alt="" class="item-thumbnail">
+                    <div class="overlay"></div>
+                </div>
+                <div class="indi">
+                    <img src="./items/item2.jpg" alt="" class="item-thumbnail">
+                    <div class="overlay"></div>
+                </div>
+                <div class="indi">
+                    <img src="./items/item3.jpg" alt="" class="item-thumbnail">
+                    <div class="overlay"></div>
+                </div>
+            </div>
+            <div class="item-header">
+                <h1 class="item-name-2"><?= $item['name'] ?></h1>
+
+            </div>
+            <div class="price-ct">
+                <div class="price">
+                    <p class="item-price-2
+                <?php if ($item['discounted_price']): ?>
+                    strike
+                <?php endif; ?>
+                ">¥<?= number_format($item['price']) ?></p>
+                </div>
+                <?php if ($item['discounted_price']): ?>
+                    <div class="discount-ct">
+                        <p class="item-price-dis2" style="font-weight: bold;">¥<?= number_format($item['discounted_price']) ?></p>
+                        <p class="item-price-dis2" style="font-size: small;">日本特別先行販売クーポン適用
+                            <i class="fa-solid fa-arrow-trend-down"></i> －¥<?= number_format(abs($item['discounted_price'] - $item['price'])) ?>
+                        </p>
+                        <div class="less-stock">
+                            <i class="fa-solid fa-clock" style="margin-right: 5px;"></i>在庫残りわずか
+                        </div>
+                    </div>
+
+
+
+                <?php endif; ?>
+            </div>
+            <div class="purchase-btn-ct">
+                <button class="purchase-now2">後払いで今すぐ注文</button>
+            </div>
+
+        </section>
+
+
         <section id="top-menu" class="top-menu">
             <a href="./items.php" class="link-img-ct">
                 <img src="./res/img/item_img2.png" alt="" class="link-img">
@@ -289,22 +366,30 @@ $seconds = $remainingSeconds % 60;
 </body>
 <script src="./header_margin.js"></script>
 <script>
-    
-
-    adjustItemThumbnails();
+    adjustItemHero();
+    adjustItemThumbnail();
     window.addEventListener('resize', function() {
-        adjustItemThumbnails();
+        adjustItemHero();
+        adjustItemThumbnail();
     })
     //商品サムネイルを正方形に
-    function adjustItemThumbnails() {
-        document.querySelectorAll('.item-img-1').forEach(img => {
+    function adjustItemHero() {
+        document.querySelectorAll('.item-hero').forEach(img => {
             let w = img.getBoundingClientRect().width;
             img.style.height = w + 'px';
         })
     }
 
+    function adjustItemThumbnail() {
+        document.querySelectorAll('.img-indicators .indi').forEach(img => {
+            img.style.height = img.getBoundingClientRect().width + 'px'
+            console.log(img.style.height);
+
+        })
+    }
+
     setCarousel('.carousel-wrapper', '.carousel-item', '.carousel-indicators .indi', 'next', 'prev')
-    setCarousel('.r-c-wrapper', '.r-c-item', '.r-indicators .indi', 'r-next', 'r-prev')
+    setCarousel('.img-carousel-wrapper', '.img-carousel-item', '.img-indicators .indi', 'img-next', 'img-prev')
 
     document.querySelectorAll('.scroll-to').forEach(elem => {
         elem.addEventListener('click', function(e) {
@@ -312,7 +397,8 @@ $seconds = $remainingSeconds % 60;
             let id = elem.hash.slice(1)
             let target = document.getElementById(id);
             target.scrollIntoView({
-                block:"center",behavior:"smooth"
+                block: "center",
+                behavior: "smooth"
             })
         })
     })
@@ -358,6 +444,14 @@ $seconds = $remainingSeconds % 60;
                 el.classList.toggle('active', idx === x);
             });
         };
+        //インジケータークリックでジャンプ
+        indicators.forEach((indi, index) => {
+            indi.addEventListener('click', function() {
+
+                moveCarousel(index)
+
+            })
+        })
 
         let isSwiping = false;
 
@@ -396,8 +490,11 @@ $seconds = $remainingSeconds % 60;
         carouselWrapper.addEventListener("touchstart", startSwipe);
         carouselWrapper.addEventListener("touchmove", moveSwipe);
         carouselWrapper.addEventListener("touchend", endSwipe);
+
+
+
+
     }
-   
 </script>
 
 </html>

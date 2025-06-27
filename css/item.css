@@ -1,0 +1,116 @@
+.item-hero{
+    width: 100%;
+}
+.img-carousel{
+    overflow: hidden;
+    position: relative;
+}
+.img-carousel button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+    text-shadow: 1px 1px 5px #333;
+    z-index: 100;
+}
+#img-prev{
+    left: 10px;
+}
+#img-next{
+    right: 10px;
+}
+.img-carousel-wrapper{
+    display: flex;
+    
+}
+.img-carousel-item{
+    min-width: 100%;
+
+}
+.img-indicators{
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+}
+.img-indicators .indi{
+    width: 15%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 0;
+    border: none;
+    position: relative;
+    
+}
+.img-indicators img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.img-indicators .active{
+    background-color: #fff;
+}
+.img-indicators .active .overlay{
+    background-color: rgba(255, 255, 255, 0.3);
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+.item-header{
+    padding: 20px 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    display: flex;
+    
+    color: var(--text-color);
+}
+.item-name-2{
+    font-size: 1rem;
+    font-weight: 400;
+    flex: 1;
+}
+.price-ct{
+    text-align: end;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+.item-price-2{
+    
+    font-size: 1rem;
+    font-weight: 400;
+}
+.taxin{
+    font-size: x-small;
+    text-align: end;
+}
+.item-price-dis2{
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--red);
+}
+.less-stock{
+    font-size: small;
+    background-color: var(--yellow);
+  
+}
+.discount-ct{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+.purchase-btn-ct{
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.purchase-btn-ct button{
+    padding: 15px 0px;
+    border: solid 1px #fff;
+}
+.purchase-now2{
+    background-color: #212121;
+    color: white;
+}

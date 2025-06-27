@@ -6,7 +6,7 @@
     </div>
 
     <div class="nav-header">
-        <button class="nav-btn">≡</button>
+        <button class="nav-btn" id="open-nav">≡</button>
         <div class="h-logo-ct">
             <a href="./index.php" class="logo-ct">
                 <img src="./res/img/wlogo.png" alt="" class="h-logo-icon">
@@ -25,11 +25,11 @@
 </header>
 
 
-<nav class="nav-window" style="display: none;">
+<nav class="nav-window" id="nav-window">
     <div class="nav-ct">
         <div class="nav-title">
             <h4 style="font-weight: 400;">メインメニュー</h4>
-            <button>Close</button>
+            <button id="close-nav">×</button>
         </div>
 
         <ul>
@@ -46,9 +46,10 @@
 
 
 </nav>
-<div class="nav-overlay" style="display: none;"></div>
+<div class="nav-overlay" id="nav-overlay" style="display: none;"></div>
 
 <script src="./handle_notice.js"></script>
+<script src="./handle_nav.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const countElm = document.getElementById('count-down');

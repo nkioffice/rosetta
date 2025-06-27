@@ -485,7 +485,13 @@ $disItems = getDiscountedItems($pdo);
                 el.classList.toggle('active', idx === x);
             });
         };
+        indicators.forEach((indi, index) => {
+            indi.addEventListener('click', function() {
 
+                moveCarousel(index)
+
+            })
+        })
         let isSwiping = false;
 
         function startSwipe(event) {
