@@ -2,9 +2,6 @@
 session_start();
 session_regenerate_id();
 
-require_once './scripts/db_connect.php';
-require_once './scripts/functions.php';
-
 // 初回訪問時間の保存
 if (!isset($_SESSION['firstVisit'])) {
     $_SESSION['firstVisit'] = (new DateTime())->format('Y-m-d H:i:s');  // 文字列として保存
@@ -23,10 +20,6 @@ $remainingSeconds = max(0, 24 * 60 * 60 - $elapsedSeconds);  // 24時間 = 86400
 $hours = floor($remainingSeconds / 3600);
 $minutes = floor(($remainingSeconds % 3600) / 60);
 $seconds = $remainingSeconds % 60;
-
-//割引商品を取得する
-$disItems = getDiscountedItems($pdo);
-
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -42,138 +35,18 @@ $disItems = getDiscountedItems($pdo);
     <title>ROSETTA TOKYO</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Zen+Kaku+Gothic+New&family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=GFS+Didot&family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/27bfde389a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <?php include 'c_header.php'; ?>
+    
 
     <main>
-        <!-- ヘッダー-->
-        <header class="hero">
-            <video class="hero_bg"
-                autoplay muted loop playsinline preload="auto"
-                poster="./res/img/placeholder.jpg">
-                <source src="./res/mov/header.mp4" type="video/mp4">
-            </video>
-
-            <div class="hero_overlay"></div>
-
-            <div class="hero_content">
-
-                <a class="cta-btn" href="./items.php">
-                    今すぐ購入
-                </a>
-                <a href="./story.php" style="color: white;font-size:small;margin-top:20px;">ROSETTA - 世界レベルの品質</a>
-            </div>
-        </header>
-        <script src="./header_index_margin.js"></script>
-        <!-- ヘッダー-->
-        <section id="senko" class="sect">
-            <div class="title-ct">
-
-                <h3>NEW ARRIVAL</h3>
-                <h2 style="font-size:x-small;">先行販売対象商品</h2>
-            </div>
-            <div class="items-ct">
-                <div class="items">
-                    <?php foreach ($disItems as $item): ?>
-                        <a href="./item.php?id=<?= $item['item_id'] ?>" class="item-card">
-                            <div class="item-ct">
-                                <div class="item-img-ct">
-                                    <img src="./items/item1.jpg" alt="" class="item-img-1">
-                                </div>
-                                <div class="item-info">
-                                    <p class="item-comment">特別先行販売</p>
-                                    <h3 class="item-name-1"><?= $item['name'] ?></h3>
-                                    <p class="item-price-1 strike">¥<?= number_format($item['price']) ?></p>
-                                    <p class="item-price-dis">¥<?= number_format($item['discounted_price']) ?></p>
-                                    <p class="sp-label">24時間限定価格</p>
-                                </div>
-                                <div class="item-btns">
-                                    <button class="purchase-now">後払いで翌日発送</button>
-                                    <button class="add-cart">カートに追加</button>
-
-                                </div>
-
-                            </div>
-                        </a>
-                    <?php endforeach; ?>
-
-                    <a href="./item.php" class="item-card">
-                        <div class="item-ct">
-                            <div class="item-img-ct">
-                                <img src="./items/item1.jpg" alt="" class="item-img-1">
-                            </div>
-                            <div class="item-info">
-                                <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-S 1.2mm snakechain SUS316L</h3>
-                                <p class="item-price-1 strike">¥219,000</p>
-                                <p class="item-price-dis">¥25,800</p>
-                                <p class="sp-label">24時間限定価格</p>
-                            </div>
-                            <div class="item-btns">
-                                <button class="purchase-now">後払いで翌日発送</button>
-                                <button class="add-cart">カートに追加</button>
-
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./item.php" class="item-card">
-                        <div class="item-ct">
-                            <div class="item-img-ct">
-                                <img src="./items/item1.jpg" alt="" class="item-img-1">
-                            </div>
-                            <div class="item-info">
-                                <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-A 1.2mm snakechain SUS316L</h3>
-                                <p class="item-price-1 strike">¥185,000</p>
-                                <p class="item-price-dis">¥19,800</p>
-                                <p class="sp-label">24時間限定価格</p>
-                            </div>
-                            <div class="item-btns">
-                                <button class="purchase-now">後払いで翌日発送</button>
-                                <button class="add-cart">カートに追加</button>
-
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./item.php" class="item-card">
-                        <div class="item-ct">
-                            <div class="item-img-ct">
-                                <img src="./items/item1.jpg" alt="" class="item-img-1">
-                            </div>
-                            <div class="item-info">
-                                <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-N 1.2mm snakechain SUS316L</h3>
-                                <p class="item-price-1 strike">¥103,000</p>
-                                <p class="item-price-dis">¥15,800</p>
-                                <p class="sp-label">24時間限定価格</p>
-                            </div>
-                            <div class="item-btns">
-                                <button class="purchase-now">後払いで翌日発送</button>
-                                <button class="add-cart">カートに追加</button>
-
-                            </div>
-
-                        </div>
-                    </a>
-
-                    <a href="./items.php" class="item-card" style="display: flex;align-items: center;justify-content: center;">
-                        全ての商品を見る
-                    </a>
-
-
-                </div>
-            </div>
-
-
-
-        </section>
+       
+       
         <section id="top-menu" class="top-menu">
             <a href="./items.php" class="link-img-ct">
                 <img src="./res/img/item_img2.png" alt="" class="link-img">
@@ -192,13 +65,11 @@ $disItems = getDiscountedItems($pdo);
 
             </a>
         </section>
-
         <div class="title-ct">
-
+            <img src="./res/img/logo.png" alt="" class="icon">
             <h3>Story</h3>
             <h2 style="font-size: x-small;">最高品質のブランド</h2>
         </div>
-
         <div class="carousel">
             <button id="prev">＜
             </button>
@@ -416,7 +287,10 @@ $disItems = getDiscountedItems($pdo);
     </main>
 
 </body>
+<script src="./header_margin.js"></script>
 <script>
+    
+
     adjustItemThumbnails();
     window.addEventListener('resize', function() {
         adjustItemThumbnails();
@@ -438,8 +312,7 @@ $disItems = getDiscountedItems($pdo);
             let id = elem.hash.slice(1)
             let target = document.getElementById(id);
             target.scrollIntoView({
-                block: "center",
-                behavior: "smooth"
+                block:"center",behavior:"smooth"
             })
         })
     })
@@ -524,85 +397,7 @@ $disItems = getDiscountedItems($pdo);
         carouselWrapper.addEventListener("touchmove", moveSwipe);
         carouselWrapper.addEventListener("touchend", endSwipe);
     }
-    /*
-        //カルーセル
-        const carouselWrapper = document.querySelector('.carousel-wrapper');
-        let carouselPosition = 0; //初期値は0
-        const maxCarouselPosition = document.querySelectorAll('.carousel-item').length - 1;
-
-        document.getElementById('next').addEventListener('click', function() {
-            moveCarousel(carouselPosition + 1);
-        })
-        document.getElementById('prev').addEventListener('click', function() {
-            moveCarousel(carouselPosition - 1);
-        })
-
-        carouselWrapper.addEventListener('mousedown', function(e) {
-            console.log(e);
-
-        })
-
-        function moveCarousel(newPos) {
-            if (newPos < 0) {
-                carouselPosition = maxCarouselPosition;
-            } else if (newPos > maxCarouselPosition) {
-                carouselPosition = 0
-            } else {
-                carouselPosition = newPos;
-            }
-            let percent = carouselPosition * 100;
-            carouselWrapper.style.transition = "transform 0.7s ease"
-            carouselWrapper.style.transform = `translateX(-${percent}%)`
-
-            setActiveIndicator(carouselPosition)
-
-        }
-        const indicators = document.querySelectorAll('.carousel-indicators .indi');
-
-        const setActiveIndicator = (x) => {
-            indicators.forEach((el, idx) => {
-                el.classList.toggle('active', idx === x);
-            });
-        };
-
-        let isSwiping = false;
-
-        function startSwipe(event) {
-            isTouch = true;
-            startX = event.touches[0].clientX;
-            moveX = 0;
-            isSwiping = true;
-            carouselWrapper.style.transition = "none"; // アニメーションを無効化（スワイプ中の動きがスムーズに）
-        }
-
-        function moveSwipe(event) {
-            if (!isSwiping) return;
-            moveX = event.touches[0].clientX - startX;
-            const translateX = -carouselPosition * 100 + (moveX / window.innerWidth) * 100; // スワイプの移動に合わせる
-            carouselWrapper.style.transform = `translateX(${translateX}%)`;
-        }
-
-        function endSwipe() {
-            if (!isSwiping) return;
-            isSwiping = false;
-
-
-            // スワイプ距離が一定以上ならスライド移動
-            if (moveX > 50) { // 右スワイプ（前の画像）
-                moveCarousel(carouselPosition - 1)
-            } else if (moveX < -50) { // 左スワイプ（次の画像）
-                moveCarousel(carouselPosition + 1)
-            } else {
-                moveCarousel(carouselPosition)
-            }
-
-
-        }
-        // タッチ操作イベント
-        carouselWrapper.addEventListener("touchstart", startSwipe);
-        carouselWrapper.addEventListener("touchmove", moveSwipe);
-        carouselWrapper.addEventListener("touchend", endSwipe);
-        */
+   
 </script>
 
 </html>

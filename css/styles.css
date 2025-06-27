@@ -18,10 +18,12 @@ body {
     top: 0;
     left: 0;
     width: 100%;
+    
     background-color: #fff;
     color: rgb(191, 76, 76);
     overflow: hidden;
     z-index: 1000;
+    
 }
 
 #close-notice {
@@ -203,9 +205,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 20px 0;
+    margin: 15px 0;
 }
-
+.title-ct h3{
+    font-size: x-large;
+    
+}
 .title-ct .icon {
     height: 15px;
 
@@ -261,12 +266,16 @@ body {
 .item-price-1 {
     font-size: small;
     line-height: 1em;
+    font-weight: bold;
+     font-family: "Noto Sans JP", sans-serif;
 }
 
 .item-price-dis {
     line-height: 1em;
     color: red;
     font-size: small;
+    font-weight: bold;
+    font-family: "Noto Sans JP", sans-serif;
 }
 
 .strike {
@@ -424,6 +433,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin: 10px 0;
 }
 .link-img-ct{
     position: relative;

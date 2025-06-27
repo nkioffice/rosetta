@@ -24,7 +24,8 @@
 
 </header>
 
-<nav class="nav-window">
+
+<nav class="nav-window" style="display: none;">
     <div class="nav-ct">
         <div class="nav-title">
             <h4 style="font-weight: 400;">メインメニュー</h4>
@@ -45,8 +46,8 @@
 
 
 </nav>
-<div class="nav-overlay"></div>
-<script src="./header_margin.js"></script>
+<div class="nav-overlay" style="display: none;"></div>
+
 <script src="./handle_notice.js"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {

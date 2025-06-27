@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.nav-header').style.marginTop = document.querySelector('.notice').getBoundingClientRect().height + 'px';
 
-    //header分のマージン
-    document.querySelector('main').style.marginTop = document.querySelector('.notice').getBoundingClientRect().height+document.querySelector('.nav-header').getBoundingClientRect().height + 'px'
-    
+    //notice分のマージン
+    document.querySelector('main').style.marginTop = document.querySelector('.notice').getBoundingClientRect().height + 'px'
 
 
     //ヘッダーの透明度
@@ -22,8 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.document.querySelector('.nav-header').style.backgroundColor = 'rgb(0,0,0,0.1)';
             }
         })
-    }else{
-                document.querySelector('.nav-header').style.backgroundColor = 'rgb(0,0,0,0.9)';
     }
 
 })
