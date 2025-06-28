@@ -128,6 +128,9 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             <div class="model-img-ct">
                 <img src="./res/model/sea_male_white2.png" alt="" class="model-img">
             </div>
+            <div class="model-caption">
+                ROSETTAのスキンジュエリーは、シンプルかつ優美なデザインでフォーマルなシーンでも、
+            </div>
             <div class="model-header-wp">
                 <h1 class="model-header">耐水性</h1>
                 <h2 class="model-sub-header">海、サウナ、汗、水に濡れても褪せない輝き</h2>
