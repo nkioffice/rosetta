@@ -11,3 +11,8 @@ function getItemById($pdo,$id){
     $stmt->execute([$id]);
     return $stmt->fetch(PDO::FETCH_ASSOC);
 }
+function getItemsImages($pdo,$id){
+    $stmt = $pdo->prepare('SELECT filename FROM item_images WHERE item_id = ? ORDER BY num ASC');
+    $stmt->execute([$id]);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}

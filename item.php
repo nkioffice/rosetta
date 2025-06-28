@@ -30,6 +30,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
         http_response_code(404);
         exit;
     }
+    $images = getItemsImages($pdo, $_GET['id']);
 } else {
     http_response_code(404);
     exit;
@@ -65,15 +66,12 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <button id="img-prev">＜</button>
                 <button id="img-next">＞</button>
                 <div class="img-carousel-wrapper">
-                    <div class="img-carousel-item">
-                        <img src="./items/item1.jpg" alt="" class="item-hero">
-                    </div>
-                    <div class="img-carousel-item">
-                        <img src="./items/item2.jpg" alt="" class="item-hero">
-                    </div>
-                    <div class="img-carousel-item">
-                        <img src="./items/item3.jpg" alt="" class="item-hero">
-                    </div>
+                    <?php foreach ($images as $image): ?>
+                        <div class="img-carousel-item">
+                            <img src="./items/<?= $image['filename'] ?>" alt="" class="item-hero">
+                        </div>
+                    <?php endforeach; ?>
+
                 </div>
             </div>
             <div class="img-indicators" style="display: none;">
@@ -121,6 +119,31 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <button class="purchase-now2">後払いで今すぐ注文</button>
             </div>
 
+        </section>
+        <section class="item-features sect">
+            <div class="model-header-wp">
+                <h1 class="model-header">ROSETTAのスキンジュエリー</h1>
+                <h2 class="model-sub-header">フォーマルもアウトドアも、人生を「共に過ごす」一生もの</h2>
+            </div>
+            <div class="model-img-ct">
+                <img src="./res/model/sea_male_white2.png" alt="" class="model-img">
+            </div>
+            <div class="model-header-wp">
+                <h1 class="model-header">耐水性</h1>
+                <h2 class="model-sub-header">海、サウナ、汗、水に濡れても褪せない輝き</h2>
+            </div>
+            <div class="model-img-ct">
+                <img src="./res/model/sea_male_white4.png" alt="" class="model-img">
+                
+            </div>
+            <div class="model-header-wp">
+                <h1 class="model-header">NEW TOKYOライン</h1>
+                <h2 class="model-sub-header">シンプル</h2>
+            </div>
+            <div class="model-img-ct">
+                <img src="./res/model/sea_male_white4.png" alt="" class="model-img">
+                
+            </div>
         </section>
 
 

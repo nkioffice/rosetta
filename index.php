@@ -83,7 +83,7 @@ $disItems = getDiscountedItems($pdo);
                         <a href="./item.php?id=<?= $item['item_id'] ?>" class="item-card">
                             <div class="item-ct">
                                 <div class="item-img-ct">
-                                    <img src="./items/item1.jpg" alt="" class="item-img-1">
+                                    <img src="./items/snake1.jpg" alt="" class="item-img-1">
                                 </div>
                                 <div class="item-info">
                                     <p class="item-comment">特別先行販売</p>
@@ -105,7 +105,7 @@ $disItems = getDiscountedItems($pdo);
                     <a href="./item.php" class="item-card">
                         <div class="item-ct">
                             <div class="item-img-ct">
-                                <img src="./items/item1.jpg" alt="" class="item-img-1">
+                                <img src="./items/snake2.jpg" alt="" class="item-img-1">
                             </div>
                             <div class="item-info">
                                 <p class="item-comment">特別先行販売</p>

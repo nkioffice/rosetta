@@ -6,8 +6,8 @@ if (isset($_SERVER['HTTP_HOST'])) {
     $host = 'localhost'; // CLI実行時用
 }
 
-$dsn = $host === 'localhost' ? 'mysql:host=localhost;dbname=rosetta;charset=utf8' : 'mysql:host=localhost;dbname=LAA1589542-rosetta;charset=utf8';
-$user = $host === 'localhost' ? 'root' : 'user';
+$dsn = $host === 'localhost' ? 'mysql:host=localhost;dbname=rosetta;charset=utf8' : 'mysql:host=mysql320.phy.lolipop.lan;dbname=LAA1589542-rosetta;charset=utf8';
+$user = $host === 'localhost' ? 'root' : 'LAA1589542';
 $password = $host === 'localhost' ? '' : '0927';
 
 try {
