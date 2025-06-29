@@ -601,3 +601,56 @@ body {
     font-size: x-small;
     color: #666;
 }
+
+/*モデル*/
+/*モデル*/
+.item-features{
+    padding: 0 ;
+}
+.model-ct{
+    padding: 10px 30px;
+}
+.model-img-ct{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.model-img{
+    width: 100%;
+}
+.model-header-wp{
+    padding: 30px 0;
+}
+.model-header{
+    font-weight: normal;
+    font-size: 1rem;
+    color: #666;
+}
+.model-sub-header{
+    font-size: 1rem;
+    font-weight: normal;
+}
+.model-caption{
+    font-size: small;
+    padding: 10px 0;
+}
+.model-all-item{
+    font-size: small;
+    color: #666;
+    text-decoration: none;
+    border-bottom: solid 1px var(--red);
+}
+.model-all-item::before{
+    content: '>';
+    
+}
+.hanten{
+    background-color: var(--text-color);
+    color: white;
+    padding: 10px 30px;
+}
+.hanten .model-header,.hanten .kome,.hanten .model-all-item{
+    color: rgb(215, 215, 215);
+    border-color: white;
+}

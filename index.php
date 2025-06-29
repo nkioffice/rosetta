@@ -174,6 +174,74 @@ $disItems = getDiscountedItems($pdo);
 
 
         </section>
+        <section class="item-features">
+            <div class="model-ct">
+                <div class="model-header-wp">
+                    <h1 class="model-header">コンセプト - A Lifetime Chain</h1>
+                    <h2 class="model-sub-header">着用者の魂が宿るチェーンが世代を繋ぐ</h2>
+                </div>
+                <div class="model-img-ct">
+                    <img src="./res/model/sea_male_white2.png" alt="" class="model-img">
+
+                </div>
+                <div class="model-caption">
+                    ROSETTAのスキンチェーンは、10万年の耐久性<span class="kome">(※)</span>を誇るSUS316L鋼を使用。<br><br>
+
+                    ニュージーランドの先住民族マオリが、肌身離さず身に付けているネックレスには着用者のマナが
+                    宿ると信じられています。<br><br>
+                    フォーマル・カジュアル・ビジネスなどのシーンを問わず常に身に付けられるROSETTAのスキンジュエリーは、
+                    親から子へ、夫から妻へ受け継ぐことで、魂の連鎖を繋ぐ、唯一無二の特別なスキンチェーンへと成長します。<br><br>
+
+                    <span class="kome">※耐久性は理論値です。適切なお手入れが必要です。</span>
+
+                </div>
+
+                <a href="items.php" class="model-all-item">
+                    全商品を見る
+                </a>
+            </div>
+
+            <div class="hanten">
+                <div class="model-header-wp">
+                    <h1 class="model-header">耐水性 - Water Proof</h1>
+                    <h2 class="model-sub-header">海水・汗にも耐え、身体の一部に</h2>
+                </div>
+                <div class="model-img-ct">
+                    <img src="./res/model/sea_male_white4.png" alt="" class="model-img">
+
+                </div>
+                <div class="model-caption">
+                    水はもちろん、海水や汗、サウナなどの高温にも対応。<br><br>
+                    マリンスポーツ、アウトドア、フィットネス、サウナ、温泉などあらゆる場面で気にする必要はありません。
+                    「スキンチェーン」は付けていることを忘れてしまうような着け心地で、
+                    文字通り「第二の肌」、身体の一部としてご着用いただけます。<br><br>
+
+                </div>
+                <a href="items.php" class="model-all-item">
+                    全商品を見る
+                </a>
+            </div>
+            <div class="model-ct">
+                <div class="model-header-wp">
+                    <h1 class="model-header">東京 - NEW TOKYO</h1>
+                    <h2 class="model-sub-header">TOKYOを拠点とした最新ライン</h2>
+                </div>
+                <div class="model-img-ct">
+                    <img src="./res/model/bar_male1.png" alt="" class="model-img">
+
+                </div>
+                <div class="model-caption">
+                    Venezia発のROSETTAから日本限定ブランドTOKYOライン発足。賑わっているのにどこか寂しさも感じさせる、
+                    独特な雰囲気を持つ東京を拠点とするブランドが遂に実現。原料から地元の加工職人まで、
+                    ROSETTAの持つ技術を詰め込んだ結晶です。
+                </div>
+                <a href="items.php" class="model-all-item">
+                    全商品を見る
+                </a>
+            </div>
+
+
+        </section>
         <section id="top-menu" class="top-menu">
             <a href="./items.php" class="link-img-ct">
                 <img src="./res/img/item_img2.png" alt="" class="link-img">
