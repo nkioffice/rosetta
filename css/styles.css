@@ -545,6 +545,14 @@ body {
     font-size: small;
     font-weight: normal;
 }
+.r-img{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.review-item{
+    color: #666;
+}
 .r-card{
     padding: 20px;
     background-color: #fff;
@@ -620,7 +628,7 @@ body {
     width: 100%;
 }
 .model-header-wp{
-    padding: 30px 0;
+    padding: 20px 0 30px 0;
 }
 .model-header{
     font-weight: normal;

@@ -35,6 +35,9 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     http_response_code(404);
     exit;
 }
+
+//最新レビューを取得する
+$reviews = getReviews($pdo, 20);
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -90,6 +93,17 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             </div>
             <div class="item-header">
                 <h1 class="item-name-2"><?= $item['name'] ?></h1>
+                <div class="item-review">
+                    <div class="stars">
+                        <img src="./res/img/star-f.png" alt="">
+                        <img src="./res/img/star-f.png" alt="">
+                        <img src="./res/img/star-f.png" alt="">
+                        <img src="./res/img/star-f.png" alt="">
+                        <img src="./res/img/star-f.png" alt="">
+
+                    </div>
+                    <div class="item-r-count">(5.0) 188reviews</div>
+                </div>
 
             </div>
             <div class="price-ct">
@@ -115,13 +129,95 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
 
                 <?php endif; ?>
             </div>
+            <div class="description-ct">
+                <p class="desc">
+                    <?= $item['description'] ?>
+                </p>
+            </div>
             <div class="purchase-btn-ct">
                 <button class="purchase-now2">後払いで今すぐ注文</button>
-                <button class="purchase-now2">カートに追加する</button>
+                <button class="add-cart2"><i class="fa-solid fa-plus"></i>カートに追加する</button>
             </div>
 
+
         </section>
+        <div class="title-ct">
+            <img src="./res/img/logo.png" alt="" class="icon">
+            <h3>REVIEWS</h3>
+            <h2 style="font-size:x-small;">お客様の声</h2>
+        </div>
+        <section class="sect" id="reviews">
+            <div class="p-review">
+                <h4>総評価</h4>
+                <div class="review-summary">
+                    <div class="stars">
+                        <img src="./res/img/star-f.png" alt="" class="star">
+                        <img src="./res/img/star-f.png" alt="" class="star">
+                        <img src="./res/img/star-f.png" alt="" class="star">
+                        <img src="./res/img/star-f.png" alt="" class="star">
+                        <img src="./res/img/star-h.png" alt="" class="star">
+
+                    </div>
+                    <div>
+                        (4.8)
+                    </div>
+                    <div>
+                        118件のレビュー
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel">
+                <button id="r-prev">＜</button>
+                <button id="r-next">＞</button>
+                <div class="r-c-wrapper">
+                    <?php foreach ($reviews as $review):
+                         $img = getReviewImage($pdo,$review['review_id']) ?>
+
+                        <div class="r-c-item">
+                            <div class="r-card">
+                                <div class="stars">
+                                    <?= renderStars(intval($review['stars'])) ?>
+                                </div>
+                                <h5 class="review-title">
+                                    <?= $review['title'] ?>
+                                    <p class="review-user">✔購入済みのユーザー</p>
+                                </h5>
+                                <a href="./item.php?id=<?= $review['item_id'] ?>" class="review-item">
+                                    <?= getItemById($pdo, $review['item_id'])['name'] ?>
+                                </a>
+                                <p class="review-desc">
+                                    <?= $review['text'] ?>
+                                </p>
+                                <?php if($img):?>
+                                <div>
+                                    <img src="./review/<?=$img['filename'] ?>" alt="" class="r-img">
+                                </div>
+                                <?php endif;?>
+                                <p class="review-date">
+                                    <?php
+                                    $reviewDate = new DateTime($review['created_at']);
+                                    echo $reviewDate->format('Y-m-d'); ?>
+                                </p>
+                            </div>
+
+                        </div>
+                    <?php endforeach; ?>
+
+
+                </div>
+            </div>
+
+            <div class="r-indicators" style="display: none;">
+                <div class="indi active"></div>
+                <div class="indi"></div>
+
+
+            </div>
+        </section>
+
         <section class="item-features">
+            <hr>
             <div class="model-ct">
                 <div class="model-header-wp">
                     <h1 class="model-header">コンセプト - A Lifetime Chain</h1>
@@ -134,8 +230,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
                 <div class="model-caption">
                     ROSETTAのスキンチェーンは、10万年の耐久性<span class="kome">(※)</span>を誇るSUS316L鋼を使用。<br><br>
 
-                    ニュージーランドの先住民族マオリが、肌身離さず身に付けているネックレスには着用者のマナが
-                    宿ると信じられています。<br><br>
+                    ニュージーランドの先住民族マオリに伝わるネックレスHei Tikiには、肌身離さず付けていることで着用者の魂が宿ると言われています。ROSETTAの
+                    スキンチェーンはこのHei Tikiに着想を得ました。<br><br>
                     フォーマル・カジュアル・ビジネスなどのシーンを問わず常に身に付けられるROSETTAのスキンジュエリーは、
                     親から子へ、夫から妻へ受け継ぐことで、魂の連鎖を繋ぐ、唯一無二の特別なスキンチェーンへと成長します。<br><br>
 
@@ -304,91 +400,8 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
             <div class="indi"></div>
 
         </div>
-        <div class="title-ct">
-            <img src="./res/img/logo.png" alt="" class="icon">
-            <h3>REVIEWS</h3>
-            <h2 style="font-size:x-small;">お客様の声</h2>
-        </div>
-        <section class="sect" id="reviews">
-            <div class="p-review">
-                <h4>総評価</h4>
-                <div class="review-summary">
-                    <div class="stars">
-                        <img src="./res/img/star-f.png" alt="" class="star">
-                        <img src="./res/img/star-f.png" alt="" class="star">
-                        <img src="./res/img/star-f.png" alt="" class="star">
-                        <img src="./res/img/star-f.png" alt="" class="star">
-                        <img src="./res/img/star-h.png" alt="" class="star">
-
-                    </div>
-                    <div>
-                        (4.8)
-                    </div>
-                    <div>
-                        118件のレビュー
-                    </div>
-                </div>
-
-            </div>
-            <div class="carousel">
-                <button id="r-prev">＜</button>
-                <button id="r-next">＞</button>
-                <div class="r-c-wrapper">
-
-                    <div class="r-c-item">
-                        <div class="r-card">
-                            <div class="stars">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                            </div>
-                            <h5 class="review-title">細いのに圧倒的存在感<p class="review-user">✔購入済みのユーザー</p>
-                            </h5>
-
-                            <p class="review-desc">細いのに立体感があり、素肌に付けているだけでとても目立ちます。
-                                今までネックレスを付けていても誰かに反応されることはなかったのですが、<br>
-                                ROSETTAのネックレスは存在感があって、色んな人に「それどこの？」と
-                                聞かれます。
-                            </p>
-                            <p class="review-date">2025-06-25</p>
-                        </div>
-
-                    </div>
-                    <div class="r-c-item">
-                        <div class="r-card">
-                            <div class="stars">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                            </div>
-                            <h5 class="review-title">翌日には届いた<p class="review-user">✔購入済みのユーザー</p>
-                            </h5>
-
-                            <p class="review-desc">
-                                後払いで購入し、翌日には手元に届きました！<br>
-                                彼氏へのプレゼント用で購入しましたが、
-                                箱も高級感があって、品質保証書も付いていたので、
-                                プレゼント用に最適だと思いました！
-                                次はお揃いで購入しようと思います！
-                            </p>
-                            <p class="review-date">2025-06-25</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="r-indicators" style="display: none;">
-                <div class="indi active"></div>
-                <div class="indi"></div>
 
 
-            </div>
-        </section>
         <div class="features">
             <div class="f-item">
                 <div class="f-title-wp">
@@ -453,6 +466,7 @@ if (isset($_GET['id']) && !empty($_GET['id'])) {
     }
 
     setCarousel('.carousel-wrapper', '.carousel-item', '.carousel-indicators .indi', 'next', 'prev')
+    setCarousel('.r-c-wrapper', '.r-c-item', '.r-indicators .indi', 'r-next', 'r-prev')
     setCarousel('.img-carousel-wrapper', '.img-carousel-item', '.img-indicators .indi', 'img-next', 'img-prev')
 
     document.querySelectorAll('.scroll-to').forEach(elem => {

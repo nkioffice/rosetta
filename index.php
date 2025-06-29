@@ -27,6 +27,9 @@ $seconds = $remainingSeconds % 60;
 //割引商品を取得する
 $disItems = getDiscountedItems($pdo);
 
+//最新レビューを取得する
+$reviews = getReviews($pdo, 20);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -93,7 +96,7 @@ $disItems = getDiscountedItems($pdo);
                                     <p class="sp-label">24時間限定価格</p>
                                 </div>
                                 <div class="item-btns">
-                                    <button class="purchase-now">後払いで翌日発送</button>
+                                   <!-- <button class="purchase-now">後払いで翌日発送</button>-->
                                     <button class="add-cart">カートに追加</button>
 
                                 </div>
@@ -102,66 +105,7 @@ $disItems = getDiscountedItems($pdo);
                         </a>
                     <?php endforeach; ?>
 
-                    <a href="./item.php" class="item-card">
-                        <div class="item-ct">
-                            <div class="item-img-ct">
-                                <img src="./items/snake2.jpg" alt="" class="item-img-1">
-                            </div>
-                            <div class="item-info">
-                                <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-S 1.2mm snakechain SUS316L</h3>
-                                <p class="item-price-1 strike">¥219,000</p>
-                                <p class="item-price-dis">¥25,800</p>
-                                <p class="sp-label">24時間限定価格</p>
-                            </div>
-                            <div class="item-btns">
-                                <button class="purchase-now">後払いで翌日発送</button>
-                                <button class="add-cart">カートに追加</button>
-
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./item.php" class="item-card">
-                        <div class="item-ct">
-                            <div class="item-img-ct">
-                                <img src="./items/item1.jpg" alt="" class="item-img-1">
-                            </div>
-                            <div class="item-info">
-                                <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-A 1.2mm snakechain SUS316L</h3>
-                                <p class="item-price-1 strike">¥185,000</p>
-                                <p class="item-price-dis">¥19,800</p>
-                                <p class="sp-label">24時間限定価格</p>
-                            </div>
-                            <div class="item-btns">
-                                <button class="purchase-now">後払いで翌日発送</button>
-                                <button class="add-cart">カートに追加</button>
-
-                            </div>
-
-                        </div>
-                    </a>
-                    <a href="./item.php" class="item-card">
-                        <div class="item-ct">
-                            <div class="item-img-ct">
-                                <img src="./items/item1.jpg" alt="" class="item-img-1">
-                            </div>
-                            <div class="item-info">
-                                <p class="item-comment">特別先行販売</p>
-                                <h3 class="item-name-1">Classe-N 1.2mm snakechain SUS316L</h3>
-                                <p class="item-price-1 strike">¥103,000</p>
-                                <p class="item-price-dis">¥15,800</p>
-                                <p class="sp-label">24時間限定価格</p>
-                            </div>
-                            <div class="item-btns">
-                                <button class="purchase-now">後払いで翌日発送</button>
-                                <button class="add-cart">カートに追加</button>
-
-                            </div>
-
-                        </div>
-                    </a>
+                    
 
                     <a href="./items.php" class="item-card" style="display: flex;align-items: center;justify-content: center;">
                         全ての商品を見る
@@ -173,6 +117,24 @@ $disItems = getDiscountedItems($pdo);
 
 
 
+        </section>
+        <section id="top-menu" class="top-menu">
+            <a href="./items.php" class="link-img-ct">
+                <img src="./res/img/item_img2.png" alt="" class="link-img">
+                <div class="overlay">
+                    <p>ALL ITEMS</p>
+                    <p style="font-size: 1rem;">全商品</p>
+                </div>
+            </a>
+            <a href="./#ingredients" class="link-img-ct scroll-to">
+                <img src="./res/img/design.jpg" alt="" class="link-img">
+                <div class="overlay">
+                    <p>STORY OF ROSETTA</p>
+                    <p style="font-size: 1rem;">ブランドストーリー</p>
+                </div>
+            </a>
+
+            </a>
         </section>
         <section class="item-features">
             <div class="model-ct">
@@ -390,51 +352,41 @@ $disItems = getDiscountedItems($pdo);
                 <button id="r-prev">＜</button>
                 <button id="r-next">＞</button>
                 <div class="r-c-wrapper">
+                    <?php foreach ($reviews as $review):
+                        $img = getReviewImage($pdo,$review['review_id'])
+                        ?>
 
-                    <div class="r-c-item">
-                        <div class="r-card">
-                            <div class="stars">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
+                        <div class="r-c-item">
+                            <div class="r-card">
+                                <div class="stars">
+                                    <?= renderStars(intval($review['stars'])) ?>
+                                </div>
+                                <h5 class="review-title">
+                                    <?= $review['title'] ?>
+                                    <p class="review-user">✔購入済みのユーザー</p>
+                                </h5>
+                                <a href="./item.php?id=<?= $review['item_id'] ?>" class="review-item">
+                                    <?= getItemById($pdo, $review['item_id'])['name'] ?>
+                                </a>
+                                <p class="review-desc">
+                                    <?= $review['text'] ?>
+                                </p>
+                                <?php if($img):?>
+                                <div>
+                                    <img src="./review/<?=$img['filename'] ?>" alt="" class="r-img">
+                                </div>
+                                <?php endif;?>
+                                <p class="review-date">
+                                    <?php
+                                    $reviewDate = new DateTime($review['created_at']);
+                                    echo $reviewDate->format('Y-m-d'); ?>
+                                </p>
                             </div>
-                            <h5 class="review-title">細いのに圧倒的存在感<p class="review-user">✔購入済みのユーザー</p>
-                            </h5>
 
-                            <p class="review-desc">細いのに立体感があり、素肌に付けているだけでとても目立ちます。
-                                今までネックレスを付けていても誰かに反応されることはなかったのですが、<br>
-                                ROSETTAのネックレスは存在感があって、色んな人に「それどこの？」と
-                                聞かれます。
-                            </p>
-                            <p class="review-date">2025-06-25</p>
                         </div>
+                    <?php endforeach; ?>
 
-                    </div>
-                    <div class="r-c-item">
-                        <div class="r-card">
-                            <div class="stars">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                                <img src="./res/img/star-f.png" alt="" class="star">
-                            </div>
-                            <h5 class="review-title">翌日には届いた<p class="review-user">✔購入済みのユーザー</p>
-                            </h5>
-
-                            <p class="review-desc">
-                                後払いで購入し、翌日には手元に届きました！<br>
-                                彼氏へのプレゼント用で購入しましたが、
-                                箱も高級感があって、品質保証書も付いていたので、
-                                プレゼント用に最適だと思いました！
-                                次はお揃いで購入しようと思います！
-                            </p>
-                            <p class="review-date">2025-06-25</p>
-                        </div>
-
-                    </div>
+                    
                 </div>
             </div>
 
